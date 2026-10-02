@@ -5,8 +5,8 @@ struct StringBuilder* sb_new(const char* string) {
     if (!sb) return NULL;
     if (!string) string = "";
     sb->size = strlen(string);
-    sb->capacity = sb->size;
-    char* cpy = malloc(sb->size);
+    sb->capacity = sb->size + 1;
+    char* cpy = malloc(sb->size +1);
     strcpy(cpy, string);
     sb->content = cpy;
     return sb;

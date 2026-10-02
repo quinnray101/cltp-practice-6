@@ -2,21 +2,33 @@
 # You MUST Answer the following questions:
 **Git**: (10 words max)
 1. Paste exactly the output of `git remote -v`
+origin  git@github.com:quinnray101/cltp-practice-6.git (fetch)
+origin  git@github.com:quinnray101/cltp-practice-6.git (push)
 
 **Makefile**: (1 word max)
 1. What target compiles an executable with debug flags?
+potbelly
 2. Which target verifies your output is identical to the given reference?
+cheba
 
 **Linux CLI**: (5 words max)
 1. At least one testcase in the testcases file fails, paste a full, single  command that runs a failing testcase:
 
+./bin/sb -i testcases/catdel.trace
+
 **GDB**: (20 characters max)
 1. When running a failing testcase, what line does the program segfault at in its given state? Paste the line.
+stringbuilder.c:10
 2. What is the call stack when the program segfaults in its given state? Paste the call stack output by GDB.
+#0  __strcpy_avx2 () at ../sysdeps/x86_64/multiarch/strcpy-avx2.S:326
+#1  0x0000555555555e5d in sb_new (string=0x7ffff7fb9ffc "abc") at stringbuilder.c:10
+#2  0x0000555555555551 in main ()
 
 **C**: (10 words max)
 1. What logic error caused the program to segfault? Note, "dereferencing null" is not sufficient.
+There was not enough allocated space in array
 2. Directly following this bug, how did you resolve the error?
+add +1 to the malloc due to the offset caused by the null-terminated character
 
 ## [IMPORTANT] After you SSH into a lab machine: Note that
 - **ALL git commands must be in the command line.**
